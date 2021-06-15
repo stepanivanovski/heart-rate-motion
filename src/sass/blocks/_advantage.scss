@@ -1,0 +1,31 @@
+.advantage {
+    padding: 70px 0 80px 0;
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 55px;
+    }   
+    &__item {
+        width: 240px;
+        text-align: center;
+    }
+    &__subtitle {
+        padding-top: 37px;
+        font-size: 18px;
+        line-height: 1.2;
+        font-weight: 700;
+        color: #0d0d0d;
+    }
+    &__descr {
+        padding-top: 28px;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 18px;
+        color: #0d0d0d;
+        a {
+            text-decoration: underline;
+            color: #ff0000;
+        }
+    }
+    
+}
