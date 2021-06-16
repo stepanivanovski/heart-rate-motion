@@ -1,10 +1,19 @@
 $(document).ready(function(){
-    $('.carousel__inner').slick({
-      infinite: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      speed: 1200,
-      prevArrow: '<button class="slick-prev"><img src = "img/slider/button_prev.png"></button>',
-      nextArrow: '<button class="slick-next"><img src = "img/slider/button_next.png"></button>'
-    });
+  $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:0,
+    nav:true,
+    navElement:"<button><img src = '../img/slider/button_next.png'></img></button>",
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
   });
+});
