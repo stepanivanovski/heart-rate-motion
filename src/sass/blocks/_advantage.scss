@@ -1,5 +1,6 @@
 .advantage {
     padding: 70px 0 80px 0;
+    background-color: #f6f6f6;
     &__items {
         display: flex;
         justify-content: space-between;
@@ -8,6 +9,17 @@
     &__item {
         width: 240px;
         text-align: center;
+    }
+    &__icon {
+        &_animated {
+            animation-name: heartbeat;
+            animation-duration: 1.5s;
+            animation-timing-function: ease;
+            animation-iteration-count: infinite;
+            &:hover {
+                animation-play-state: paused;
+            }
+        }
     }
     &__subtitle {
         padding-top: 37px;

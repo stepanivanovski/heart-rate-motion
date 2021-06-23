@@ -1,0 +1,41 @@
+.reviews {
+    padding-bottom: 65px;
+    &__wrapper {
+        display: flex;
+        justify-content: flex-start;
+        align-items:center;
+        padding-top: 100px;
+        &:nth-child(1) {
+            padding-top: 65px;
+        }
+    }
+    &__img {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        width: 169px;
+        height: 169px; 
+        border-radius: 100%;
+        overflow: hidden;  
+    }
+    &__descr {
+        width: 660px;
+        margin-left: 60px;
+    }
+    &__subtitle {
+        font-size: 18px;
+        font-weight: 700;
+        color: #0d0d0d;
+    }
+    &__marathon {
+        font-size: 14px;
+        font-weight: 300;
+        color: #646464;
+    }
+    &__review {
+        padding-top: 10px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #0d0d0d;
+    }
+}
