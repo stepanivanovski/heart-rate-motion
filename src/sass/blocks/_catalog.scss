@@ -134,13 +134,20 @@
                 margin-right: 20px;
             }
         }
-        &__list {
+        &__list-wrapper{
             position: relative;
+            transition: 0.5s all;
+            transform: translateX(0%);
+            &_active {
+                transform: translateX(-100%);
+                margin-left: 0px;
+            } 
+        }
+        &__list {
             width: 260px;
             margin-left: 0px;
             margin-bottom: 0;
             padding-left: 19px;
-            transform: translateX(0%);
             list-style-type: none;
             transition: 0.5s all;
             li {
@@ -160,11 +167,7 @@
                     height: 5px;
                     background-color: #c70101;
                 }
-            }      
-            &_active {
-                transform: translateX(-100%);
-                margin-left: 0px;
-            }           
+            }               
         }
         &__back {
             position: absolute;

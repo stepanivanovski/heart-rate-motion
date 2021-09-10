@@ -11,7 +11,7 @@ gulp.task('server', function() {
 
     browserSync({
         server: {
-            baseDir: "dist"
+            baseDir: "dist"//откуда запускается
         }
     });
 
@@ -19,18 +19,19 @@ gulp.task('server', function() {
 });
 
 gulp.task('styles', function() {
-    return gulp.src("src/sass/**/*.+(scss|sass)")
-        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-        .pipe(rename({suffix: '.min', prefix: ''}))
-        .pipe(autoprefixer())
-        .pipe(cleanCSS({compatibility: 'ie8'}))
-        .pipe(gulp.dest("dist/css"))
-        .pipe(browserSync.stream());
+    return gulp.src("src/sass/**/*.+(scss|sass)") //задача возвращает
+        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError)) // pipe означает, что с файлов будет что-то делаться; компеляция кода при помощи программы sass, стиль кода сжатый, вторая часть покажет где была ошибка если она произойдет;
+        .pipe(rename({suffix: '.min', prefix: ''}))// к style.css добвляется 'min' и превращается в style.min.css
+        .pipe(autoprefixer())// добавляются вендерные префиксы
+        .pipe(cleanCSS({compatibility: 'ie8'}))//файл очищается от коментариев и оптимизируется
+        .pipe(gulp.dest("dist/css")) //отправка адреса по адресу
+        .pipe(browserSync.stream());//запуск browserSync
 });
 
 gulp.task('watch', function() {
-    gulp.watch("src/sass/**/*.+(scss|sass|css)", gulp.parallel('styles'));
+    gulp.watch("src/sass/**/*.+(scss|sass|css)", gulp.parallel('styles'));//при изменении одного из этих фйлов задускается задача
     gulp.watch("src/*.html").on('change', gulp.parallel('html'));
+    gulp.watch("src/js/*.js").on('change', gulp.parallel('scripts'));
 });
 
 gulp.task('html', function () {
@@ -65,4 +66,4 @@ gulp.task('images', function () {
         .pipe(gulp.dest("dist/img"));
 });
 
-gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'scripts', 'fonts', 'icons', 'mailer', 'html', 'images'));
+gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'scripts', 'fonts', 'icons', 'mailer', 'html', 'images')); // парадедьно запускаются команды;
